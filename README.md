@@ -3,7 +3,7 @@
 add year, month, day to unix epoch timestamp
 
 # download
-curl https://raw.githubusercontent.com/Luke31/epochadd/main/epochadd --output ~/bin/epochadd
+`curl https://raw.githubusercontent.com/Luke31/epochadd/main/epochadd --output ~/bin/epochadd`
 
 # usage
 ```
