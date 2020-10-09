@@ -1,6 +1,6 @@
 # epochadd
 
-add year, month, day to unix epoch timestamp
+add year, month, day to unix epoch timestamp (seconds, milliseconds or nanoseconds)
 
 # download
 `curl https://raw.githubusercontent.com/Luke31/epochadd/main/epochadd --output ~/bin/epochadd`
