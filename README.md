@@ -4,6 +4,7 @@ add year, month, day to unix epoch timestamp
 
 - supports year, month, day in positive and negative integers
 - supports seconds, milliseconds or nanoseconds timestamps
+- all datetimes in UTC
 
 # download
 `curl https://raw.githubusercontent.com/Luke31/epochadd/main/epochadd --output ~/bin/epochadd`
