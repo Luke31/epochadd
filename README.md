@@ -14,3 +14,6 @@ epochadd <inputepoch> <years> <months> <days>
 ```
 
 [![asciicast](https://asciinema.org/a/i1Csv27G94PjQuHxKNAohbVb5.svg)](https://asciinema.org/a/i1Csv27G94PjQuHxKNAohbVb5)
+
+# Hint
+Stops working at `2033-05-18 03:33:19` (epoch 1999999999)
