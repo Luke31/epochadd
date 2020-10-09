@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+import datetime
+import sys
+epoch1970 = datetime.datetime.utcfromtimestamp(0)
+
+
+def main():
+    if len(sys.argv) == 1:
+        print("no epoch provided, usage: epochadd <inputepoch> <years> <months> <days>")
+        print("inputepoch can be in seconds, milliseconds or nanoseconds")
+        sys.exit()
+    epochin = sys.argv[1]
+    year = 0
+    if len(sys.argv) >= 3:
+        year = int(sys.argv[2])
+    month = 0
+    if len(sys.argv) >= 4:
+        month = int(sys.argv[3])
+    day = 0
+    if len(sys.argv) >= 5:
+        day = int(sys.argv[4])
+
+    if len(epochin) == 10:
+        dt = parse_epoch_nano(float(epochin))
+    if len(epochin) == 13:
+        dt = parse_epoch_nano(float(epochin) / 1000.0)
+    if len(epochin) == 16:
+        dt = parse_epoch_nano(float(epochin) / 1000_000.0)
+    print("input:")
+    print_date(dt)
+    dt_added = add_date(dt, year, month, day)
+    print("output:")
+    print_date(dt_added)
+
+
+def parse_epoch_nano(epoch):
+    return datetime.datetime.utcfromtimestamp(epoch)
+
+
+def add_date(dt, years=0, months=0, days=0):
+    dt = dt.replace(year=dt.year + years)
+    dt = dt.replace(month=dt.month + months)
+    dt = dt.replace(day=dt.day + days)
+    return dt
+
+
+def unix_time(dt):
+    return (dt - epoch1970).total_seconds()
+
+
+def unix_time_nano(dt):
+    return (dt - epoch1970).total_seconds() * 1000_000.0
+
+
+def print_date(dt):
+    print(f"date: {dt.strftime('%Y-%m-%d %H:%M:%S.%f')}"
+          f", unix_nano: {unix_time_nano(dt):.0f}"
+          f", unix: {unix_time(dt):.0f}"
+          f", yyyymmddhh24: {dt.strftime('%Y%m%d%H')}")
+
+
+if __name__ == "__main__":
+    main()
