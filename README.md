@@ -16,4 +16,4 @@ epochadd <inputepoch> <years> <months> <days>
 [![asciicast](https://asciinema.org/a/i1Csv27G94PjQuHxKNAohbVb5.svg)](https://asciinema.org/a/i1Csv27G94PjQuHxKNAohbVb5)
 
 # Hint
-Stops working after `2286-11-20 17:46:39` (epoch 9999999999)
+Doesn't work for dates after `2286-11-20 17:46:39` (epoch 9999999999)
